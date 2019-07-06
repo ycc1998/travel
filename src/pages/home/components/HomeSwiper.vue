@@ -31,7 +31,7 @@
 
     }
 </script>
-<style>
+<style lang="stylus" scoped>
 
     .swiper /deep/ .swiper-pagination-bullet-active
     {
