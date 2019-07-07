@@ -1,10 +1,10 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page,key) of pages" :key="key">
                 <div class="icon" v-for="(item,index) of page" :key="index">
                     <div>
-                        <img :src="item.img"/>
+                        <img :src="item.imgUrl"/>
                     </div>
                     <p>{{item.desc}}</p>
                 </div>
@@ -15,55 +15,17 @@
 <script>
 export default {
     name:'HomeIcons',
+    props:{
+        iconList:Array
+    },
     data (){
         return {
-            iconList:[
-                {
-                    id:1,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
+            swiperOption: {
+                pagination: {
+                    effect : 'flip',
                 },
-                {
-                    id:2,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                },
-                {
-                    id:3,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                },
-                {
-                    id:4,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                },
-                {
-                    id:5,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                },
-                {
-                    id:6,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                },
-                {
-                    id:7,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                },
-                {
-                    id:8,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                },
-                {
-                    id:9,
-                    img:'https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/20983/16/10753/6124/5c8a16aaE5d6b15d7/01e0e818a7505267.png.webp',
-                    desc:'热门景区'
-                }
-            ]
+            },
+
         };
     },
     computed:{
